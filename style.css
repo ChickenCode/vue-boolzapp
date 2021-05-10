@@ -1,0 +1,84 @@
+/*
+Piccola legenda dei commenti::after
+
+{} = sezione innestata dentro un altra sezione
+[] = sezione che contiene degli innesti
+
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Generali */
+.width-100 {
+    width: 100%;
+}
+
+.absolute-p {
+    position: absolute;
+}
+
+.negative-z-1 {
+    z-index: -1;
+}
+
+.flex {
+    display: flex;
+}
+
+.round-icon {
+    border-radius: 50%;
+}
+
+.lat-margin-10 {
+    margin: 0 10px;
+}
+
+/* Specifici sfondo */
+
+.striscia-verde-sfondo {
+    position: absolute;
+    background-color: #009788;
+    height: 100px;
+}
+
+.resto-sfondo {
+    background-color: #dadbd5;
+    height: 100vh;
+}
+
+/* Sezione principale []*/
+
+.container {
+    width: 1080px;
+    height: 700px;
+    margin: auto;
+    transform: translateY(30px);
+    background-color: hotpink;
+
+}
+
+/*Sezione di sinistra {Sezione principale} []*/
+
+.left-side {
+    width: 30%;
+    height: 100%;
+    background-color: indigo;
+}
+
+/*Barra self {Sezione di sinistra} []*/
+
+.barra-self {
+    height: 50px;
+    background-color: yellow;
+    align-items: center;
+}
+
+.barra-self .round-icon {
+    height: 40px;
+    
+}
+
