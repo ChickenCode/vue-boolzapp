@@ -3,6 +3,7 @@ new Vue ({
     data: {
         counter: 2,
         myMessage: "",
+        answer: "Ok",
         contacts: [
             {
             image: "img/avatar_4.jpg",
@@ -104,7 +105,14 @@ new Vue ({
             })
 
             this.myMessage = ""
-            console.log(this.contacts[this.counter].messages[3].text)
+        },
+
+        newAnswer() {
+            this.contacts[this.counter].messages.push({
+                date: '10/01/2020 15:50:00',
+                text: this.answer,
+                status: 'received'
+            })
         }
     },
 

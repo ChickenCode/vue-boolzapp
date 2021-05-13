@@ -104,7 +104,7 @@
 
             <!-- Barra scrittura -->
             <div>
-                <form v-on:submit.prevent @keyup.enter="newMessage()" action="" class="form-bar flex items-center">
+                <form v-on:submit.prevent @keyup.enter="newMessage(); newAnswer()" action="" class="form-bar flex items-center">
                     <i class="fa fa-smile-o gray icon-margin" aria-hidden="true"></i>
                     <input v-model="myMessage" type="text" class="search-textbar flex-grow" style="border-radius: 20px; padding: 10px;" placeholder="Scrivi un messaggio">
                     <i class="fa fa-microphone gray icon-margin" aria-hidden="true"></i>
