@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
-    
 </head>
 <body>
 
@@ -17,52 +17,114 @@
         <div class="striscia-verde-sfondo absolute-p width-100 negative-z-1"></div>
 
 <!-- Parte principale -->
-    <div class="container">
+    <div class="container flex">
 
     <!-- Sezione sinistra -->
-        <aside class="left-side">
+        <aside class="left-side flex flex-column">
             <!-- Barra self -->
-            <div  class="barra-self flex">
-                <div class="my-profile-image flex">
+            <div  class="barra-self flex items-center">
+                <div class="my-profile-image flex flex-grow">
                     <img src="img/avatar_1.jpg" alt="My profile image" class="round-icon lat-margin-10">
                 </div>
-
-                <div class="selfbar-icons">
-                    
+                <div>
+                    <i class="fa fa-refresh gray" aria-hidden="true"></i>   
+                    <i class="fa fa-comments gray" aria-hidden="true"></i>     
+                    <i class="fa fa-ellipsis-v gray" aria-hidden="true"></i>            
                 </div>
             </div>
 
             <!-- Barra notifiche -->
-            <div>
-
+            <div class="barra-notifiche flex items-center">
+                <i class="fa fa-bell-slash bell-icon" aria-hidden="true"></i>
+                <p class="gray">
+                    <strong>Ricevi notifiche di nuovi messaggi</strong><br><a href="">Attiva notifiche desktop</a>
+                </p>
             </div>
 
             <!-- Barra ricerca -->
-            <div>
-
-            </div>
+            <form action="" class="form-bar flex">
+                <button class=" search-icon"><i class="fa fa-search" aria-hidden="true"></i></button><input type="text" class="search-textbar flex-grow" placeholder="Cerca o inizia una nuova chat">
+            </form>
 
             <!-- Sezione chat varie -->
-            <div>
-
+            <div class="flex flex-column flex-grow scroll-y" style="background-color: blue;">
+                <div>
+                    <i class="fa fa-bell-slash bell-icon" aria-hidden="true"></i>
+                <p class="gray">
+                    <strong>Ricevi notifiche di nuovi messaggi</strong><br><a href="">Attiva notifiche desktop</a>
+                </p>
+                </div>
+                <div>
+                    <i class="fa fa-bell-slash bell-icon" aria-hidden="true"></i>
+                <p class="gray">
+                    <strong>Ricevi notifiche di nuovi messaggi</strong><br><a href="">Attiva notifiche desktop</a>
+                </p>
+                </div>
+                <div>
+                    <i class="fa fa-bell-slash bell-icon" aria-hidden="true"></i>
+                <p class="gray">
+                    <strong>Ricevi notifiche di nuovi messaggi</strong><br><a href="">Attiva notifiche desktop</a>
+                </p>
+                </div>
+                <div>
+                    <i class="fa fa-bell-slash bell-icon" aria-hidden="true"></i>
+                <p class="gray">
+                    <strong>Ricevi notifiche di nuovi messaggi</strong><br><a href="">Attiva notifiche desktop</a>
+                </p>
+                </div>
+                <div>
+                    <i class="fa fa-bell-slash bell-icon" aria-hidden="true"></i>
+                <p class="gray">
+                    <strong>Ricevi notifiche di nuovi messaggi</strong><br><a href="">Attiva notifiche desktop</a>
+                </p>
+                </div>
+                <div>
+                    <i class="fa fa-bell-slash bell-icon" aria-hidden="true"></i>
+                <p class="gray">
+                    <strong>Ricevi notifiche di nuovi messaggi</strong><br><a href="">Attiva notifiche desktop</a>
+                </p>
+                </div>
+                <div>
+                    <i class="fa fa-bell-slash bell-icon" aria-hidden="true"></i>
+                <p class="gray">
+                    <strong>Ricevi notifiche di nuovi messaggi</strong><br><a href="">Attiva notifiche desktop</a>
+                </p>
+                </div>
+                <div>
+                    <i class="fa fa-bell-slash bell-icon" aria-hidden="true"></i>
+                <p class="gray">
+                    <strong>Ricevi notifiche di nuovi messaggi</strong><br><a href="">Attiva notifiche desktop</a>
+                </p>
+                </div>
             </div>
         </aside>
 
     <!-- Sezione destra -->
-        <aside class="right-side">
+        <aside class="right-side flex flex-column">
             <!-- Barra contatto -->
-            <div>
-                
+            <div class="barra-contatto flex items-center">
+                <div class="my-profile-image flex-row flex-grow">
+                    <img src="img/avatar_1.jpg" alt="My profile image" class="round-icon lat-margin-10  flex-grow">
+                </div>
+                <div>
+                    <i class="fa fa-refresh gray" aria-hidden="true"></i>   
+                    <i class="fa fa-comments gray" aria-hidden="true"></i>     
+                    <i class="fa fa-ellipsis-v gray" aria-hidden="true"></i>            
+                </div>
             </div>
 
             <!-- Sezione chat -->
-            <div>
-
+            <div class="flex-column flex-grow" style="background-image: url('img/mine.jpg')"> 
+                
             </div>
 
             <!-- Barra scrittura -->
             <div>
-
+                <form action="" class="form-bar flex items-center">
+                    <i class="fa fa-smile-o gray icon-margin" aria-hidden="true"></i>
+                    <input type="text" class="search-textbar flex-grow" style="border-radius: 20px; padding: 10px;" placeholder="Scrivi un messaggio">
+                    <i class="fa fa-microphone gray icon-margin" aria-hidden="true"></i>
+                </form>
             </div>
         </aside>
     </div>

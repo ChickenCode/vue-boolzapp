@@ -2,7 +2,7 @@
 Piccola legenda dei commenti::after
 
 {} = sezione innestata dentro un altra sezione
-[] = sezione che contiene degli innesti
+[] = sezione che contiene una o più altre sezioni innestate
 
 */
 
@@ -13,6 +13,27 @@ Piccola legenda dei commenti::after
 }
 
 /* Generali */
+
+.scroll-y {
+    overflow-y: scroll;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-grow {
+    flex-grow: 1;
+}
+
+.gray {
+    color: #5a595a;
+}
+
 .width-100 {
     width: 100%;
 }
@@ -37,6 +58,9 @@ Piccola legenda dei commenti::after
     margin: 0 10px;
 }
 
+.items-center {
+    align-items: center;
+}
 /* Specifici sfondo */
 
 .striscia-verde-sfondo {
@@ -47,7 +71,7 @@ Piccola legenda dei commenti::after
 
 .resto-sfondo {
     background-color: #dadbd5;
-    height: 100vh;
+    height: 100%;
 }
 
 /* Sezione principale []*/
@@ -61,6 +85,10 @@ Piccola legenda dei commenti::after
 
 }
 
+/*
+    INIZIO DELLA SEZIONE DI DESTRA
+*/
+
 /*Sezione di sinistra {Sezione principale} []*/
 
 .left-side {
@@ -69,16 +97,116 @@ Piccola legenda dei commenti::after
     background-color: indigo;
 }
 
-/*Barra self {Sezione di sinistra} []*/
+/*Barra self {Sezione di sinistra}*/
 
 .barra-self {
-    height: 50px;
-    background-color: yellow;
-    align-items: center;
+    min-height: 50px;
+    background-color: lightgray;
+    padding-right: 10px;
 }
 
-.barra-self .round-icon {
+.round-icon {
     height: 40px;
-    
 }
+
+.barra-self i {
+    margin: 0 5px;
+}
+
+/*Barra notifiche {Sezione di sinistra}*/
+
+.barra-notifiche {
+    height: 70px;
+    background-color: lightskyblue;
+    padding: 10px;
+}
+
+.barra-notifiche p {
+    margin-left: 10px;
+    font-size: 0.9em;
+}
+
+.barra-notifiche p a {
+    color: gray;
+}
+
+.bell-icon {
+    border-radius: 50%;
+    padding: 15px;
+    background-color: white;
+    color: lightskyblue;
+}
+
+/*Barra ricerca {Sezione di sinistra}*/
+
+.form-bar {
+    padding: 5px 10px;
+    background-color: lightgray;
+}
+
+.search-icon {
+    padding: 5px;
+    background-color: white;
+    border: none;
+    border-radius:  20px 0 0 20px;
+    color: lightgray;
+}
+
+.search-textbar {
+    padding: 5px;
+    border: none;
+    border-radius: 0 20px 20px 0;
+}
+
+.search-textbar::placeholder {
+    font-size: 0.8em;
+}
+
+/*Sezione chat varie {Sezione di sinistra}*/
+
+
+
+
+/*
+    CONCLUSIONE DELLA SEZIONE DI SINISTRA
+*/
+
+
+/*
+    INIZIO DELLA SEZIONE DI DESTRA
+*/
+
+
+/*Sezione di destra {Sezione principale} {}*/
+.right-side {
+    width: 70%;
+    height: 100%;
+    background-color: indigo;
+}
+
+/*Barra contatto {Sezione di sinistra}*/
+
+.barra-contatto {
+    height: 50px;
+    background-color: lightgray;
+    padding-right: 10px;
+    border-left: gray 2px solid;
+}
+
+.barra-contatto i {
+    margin: 0 5px;
+}
+
+/*Barra chat {Sezione di sinistra}*/
+
+/*Barra scrittura {Sezione di sinistra}*/
+
+.icon-margin {
+    margin: 0 20px;
+}
+
+
+
+
+
 
