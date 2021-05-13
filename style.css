@@ -10,12 +10,17 @@ Piccola legenda dei commenti::after
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+input:focus {
+    outline: none;
 }
 
 /* Generali */
 
 .scroll-y {
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .flex-column {
@@ -52,6 +57,7 @@ Piccola legenda dei commenti::after
 
 .round-icon {
     border-radius: 50%;
+    height: 40px;
 }
 
 .lat-margin-10 {
@@ -67,13 +73,13 @@ Piccola legenda dei commenti::after
     position: absolute;
     background-color: #009788;
     height: 100px;
+    
 }
 
 .resto-sfondo {
     background-color: #dadbd5;
     height: 100%;
 }
-
 /* Sezione principale []*/
 
 .container {
@@ -81,8 +87,6 @@ Piccola legenda dei commenti::after
     height: 700px;
     margin: auto;
     transform: translateY(30px);
-    background-color: hotpink;
-
 }
 
 /*
@@ -94,7 +98,6 @@ Piccola legenda dei commenti::after
 .left-side {
     width: 30%;
     height: 100%;
-    background-color: indigo;
 }
 
 /*Barra self {Sezione di sinistra}*/
@@ -105,8 +108,10 @@ Piccola legenda dei commenti::after
     padding-right: 10px;
 }
 
-.round-icon {
-    height: 40px;
+.big-round-icon {
+    height: 50px;
+    border-radius: 50%;
+    margin: 10px;
 }
 
 .barra-self i {
@@ -159,11 +164,18 @@ Piccola legenda dei commenti::after
 }
 
 .search-textbar::placeholder {
-    font-size: 0.8em;
+    font-size: 0.9em;
 }
 
 /*Sezione chat varie {Sezione di sinistra}*/
+.chat-varie {
+    background-color: white;
+}
 
+.inferior-border {
+    border-bottom: 1px solid rgba(128,128,128, 0.5);
+    padding-right: 10px;
+}
 
 
 
@@ -187,7 +199,7 @@ Piccola legenda dei commenti::after
 /*Barra contatto {Sezione di sinistra}*/
 
 .barra-contatto {
-    height: 50px;
+    min-height: 50px;
     background-color: lightgray;
     padding-right: 10px;
     border-left: gray 2px solid;
