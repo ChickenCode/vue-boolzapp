@@ -78,8 +78,14 @@
             </div>
 
             <!-- Sezione chat -->
-            <div class="flex-column flex-grow" style="background-image: url('img/mine.jpg')"> 
-                
+            <div class="flex-column flex-grow scroll-y flex" style="background-image: url('img/mine.jpg')"> 
+                <div v-for="message in contacts[counter].messages" class="inline-block">
+                    <div :class=" [{ sent : message.status === 'sent' }, { recieved : message.status === 'received' }]">
+                        <div :class="[{ green : message.status === 'sent' }, { white : message.status === 'received' }]">
+                            {{message.text}}
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Barra scrittura -->

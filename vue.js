@@ -1,6 +1,7 @@
 new Vue ({
     el: "#root",
     data: {
+        counter: 3,
         contacts: [
             {
             image: "img/avatar_4.jpg",
@@ -89,14 +90,16 @@ new Vue ({
             ],
             },
         ]
+        
+
     },
 
     methods: {
-
+    
     },
 
     mounted() {
-        console.log(this.contacts[0].name)
+        
     }
 })
 
