@@ -77,7 +77,7 @@
 
         
             <!-- Barra contatto -->
-        <div v-else class="flex flex-column flex-grow">
+        <div v-else class="flex flex-column height-100">
             <div class="barra-contatto flex items-center">
                 <div class="flex-row flex-grow flex">
                     <img src="img/avatar_1.jpg" alt="My profile image" class="round-icon lat-margin-10">
@@ -90,7 +90,7 @@
             </div>
 
             <!-- Sezione chat -->
-            <div class="flex-column flex-grow scroll-y flex" style="background-image: url('img/mine.jpg')"> 
+            <div class="flex-column flex-grow scroll-y flex" id="container" style="background-image: url('img/mine.jpg')"> 
                 <div>
                     <div v-for="message in contacts[counter].messages" class="inline-block">
                         <div :class=" [{ sent : message.status === 'sent' }, { recieved : message.status === 'received' }]">
@@ -104,7 +104,7 @@
 
             <!-- Barra scrittura -->
             <div>
-                <form v-on:submit.prevent @keyup.enter="newMessage(); newAnswer()" action="" class="form-bar flex items-center">
+                <form v-on:submit.prevent @keyup.enter="newMessage();" action="" class="form-bar flex items-center">
                     <i class="fa fa-smile-o gray icon-margin" aria-hidden="true"></i>
                     <input v-model="myMessage" type="text" class="search-textbar flex-grow" style="border-radius: 20px; padding: 10px;" placeholder="Scrivi un messaggio">
                     <i class="fa fa-microphone gray icon-margin" aria-hidden="true"></i>

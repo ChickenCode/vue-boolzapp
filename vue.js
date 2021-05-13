@@ -3,7 +3,7 @@ new Vue ({
     data: {
         counter: 2,
         myMessage: "",
-        answer: "Ok",
+        answer: ["Non capisco...", "Guarda che non sono un intelligenza artificiale", "Parlassi col muro no capirebbe comunque piu di me", "Faccio solo finta di capire"],
         contacts: [
             {
             image: "img/avatar_4.jpg",
@@ -105,16 +105,26 @@ new Vue ({
             })
 
             this.myMessage = ""
+
+            this.newAnswer()
+            this.scrollToEnd()
         },
 
         newAnswer() {
             this.contacts[this.counter].messages.push({
                 date: '10/01/2020 15:50:00',
-                text: this.answer,
+                text: this.answer[Math.floor(Math.random() * (this.answer).length)],
                 status: 'received'
             })
+        },
+
+        scrollToEnd() {
+            let container = this.$el.querySelector("#container");
+            container.scrollTop = container.scrollHeight;
         }
     },
+
+
 
     mounted() {
     }
