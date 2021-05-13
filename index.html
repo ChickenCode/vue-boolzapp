@@ -42,7 +42,7 @@
             </div>
 
             <!-- Barra ricerca -->
-            <form action="" class="form-bar flex">
+            <form v-on:submit.prevent action="" class="form-bar flex">
                 <button class=" search-icon"><i class="fa fa-search" aria-hidden="true"></i></button><input type="text" class="search-textbar flex-grow" placeholder="Cerca o inizia una nuova chat">
             </form>
 
@@ -65,7 +65,19 @@
 
     <!-- Sezione destra -->
         <aside class="right-side flex flex-column">
+        <div v-if="counter == null" class="counter-null">
+            <img src="https://web.whatsapp.com/img/intro-connection-light_c98cc75f2aa905314d74375a975d2cf2.jpg" alt="">
+            <br>
+            <p class="null-p null-p-big">Mantieni il telefono connesso</p>
+            <br>
+            <p class="null-p null-p-small">WhatsApp si collega al tuo telefono. Per ridurre l'utilizzo dei dati, collega il telefono al Wi-Fi. Clicca su una chat per aprirla, o avviane una nuova.</p>
+            <hr class="rule">
+            <p style="color: darkgray;"><i class="fa fa-laptop" aria-hidden="true"></i> WhatsApp è disponibile per Windows. <strong ><a href="" style="color: #07bc4c; text-decoration: none;">Scaricala qui</a></strong>.</p>
+        </div>
+
+        
             <!-- Barra contatto -->
+        <div v-else class="flex flex-column flex-grow">
             <div class="barra-contatto flex items-center">
                 <div class="flex-row flex-grow flex">
                     <img src="img/avatar_1.jpg" alt="My profile image" class="round-icon lat-margin-10">
@@ -79,10 +91,12 @@
 
             <!-- Sezione chat -->
             <div class="flex-column flex-grow scroll-y flex" style="background-image: url('img/mine.jpg')"> 
-                <div v-for="message in contacts[counter].messages" class="inline-block">
-                    <div :class=" [{ sent : message.status === 'sent' }, { recieved : message.status === 'received' }]">
-                        <div :class="[{ green : message.status === 'sent' }, { white : message.status === 'received' }]">
-                            {{message.text}}
+                <div>
+                    <div v-for="message in contacts[counter].messages" class="inline-block">
+                        <div :class=" [{ sent : message.status === 'sent' }, { recieved : message.status === 'received' }]">
+                            <div :class="[{ green : message.status === 'sent' }, { white : message.status === 'received' }]">
+                                {{message.text}}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -90,12 +104,13 @@
 
             <!-- Barra scrittura -->
             <div>
-                <form action="" class="form-bar flex items-center">
+                <form v-on:submit.prevent @keyup.enter="newMessage()" action="" class="form-bar flex items-center">
                     <i class="fa fa-smile-o gray icon-margin" aria-hidden="true"></i>
-                    <input type="text" class="search-textbar flex-grow" style="border-radius: 20px; padding: 10px;" placeholder="Scrivi un messaggio">
+                    <input v-model="myMessage" type="text" class="search-textbar flex-grow" style="border-radius: 20px; padding: 10px;" placeholder="Scrivi un messaggio">
                     <i class="fa fa-microphone gray icon-margin" aria-hidden="true"></i>
                 </form>
             </div>
+        </div>
         </aside>
     </div>
     

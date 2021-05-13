@@ -1,7 +1,8 @@
 new Vue ({
     el: "#root",
     data: {
-        counter: 3,
+        counter: 2,
+        myMessage: "",
         contacts: [
             {
             image: "img/avatar_4.jpg",
@@ -95,11 +96,19 @@ new Vue ({
     },
 
     methods: {
-    
+        newMessage() {
+            this.contacts[this.counter].messages.push({
+                date: '10/01/2020 15:50:00',
+                text: this.myMessage,
+                status: 'sent'
+            })
+
+            this.myMessage = ""
+            console.log(this.contacts[this.counter].messages[3].text)
+        }
     },
 
     mounted() {
-        
     }
 })
 
