@@ -4,7 +4,7 @@ new Vue ({
         searchString: "",
         counter: 2,
         myMessage: "",
-        answer: ["Non capisco...", "Guarda che non sono un intelligenza artificiale", "Parlassi col muro no capirebbe comunque piu di me", "Faccio solo finta di capire"],
+        answer: ["Non capisco...", "Rispondo a caso, mica sono un intelligenza artificiale.", "Parlassi col muro ne capirebbe comunque piu di me", "Faccio solo finta di capire"],
         contacts: [
             {
             image: "img/avatar_4.jpg",
