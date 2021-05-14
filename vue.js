@@ -106,7 +106,8 @@ new Vue ({
 
             this.myMessage = ""
 
-            this.newAnswer()
+            setTimeout( () => this.newAnswer(), 3000)
+            //this.newAnswer()
             this.scrollToEnd()
         },
 
