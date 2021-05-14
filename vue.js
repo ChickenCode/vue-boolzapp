@@ -8,7 +8,7 @@ new Vue ({
             {
             image: "img/avatar_4.jpg",
             name: 'Michele',
-            avatar: '_1',
+            avatar: '1',
             visible: true,
             messages: [
             {
@@ -31,7 +31,7 @@ new Vue ({
             {
             image: "img/avatar_2.jpg",
             name: 'Fabio',
-            avatar: '_2',
+            avatar: '2',
             visible: true,
             messages: [
             {
@@ -53,7 +53,7 @@ new Vue ({
             },{
             image: "img/avatar_3.jpg",
             name: 'Samuele',
-            avatar: '_3',
+            avatar: '3',
             visible: true,
             messages: [
             {
@@ -76,7 +76,7 @@ new Vue ({
             {
             image: "img/avatar_6.jpg",
             name: 'Luisa',
-            avatar: '_4',
+            avatar: '4',
             visible: true,
             messages: [
             {
@@ -121,6 +121,10 @@ new Vue ({
         scrollToEnd() {
             let container = this.$el.querySelector("#container");
             container.scrollTop = container.scrollHeight;
+        },
+
+        changeCounter(param) {
+            this.counter = param
         }
     },
 
