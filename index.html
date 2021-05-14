@@ -97,6 +97,8 @@
                         <div :class=" [{ sent : message.status === 'sent' }, { recieved : message.status === 'received' }]">
                             <div :class="[{ green : message.status === 'sent' }, { white : message.status === 'received' }]">
                                 {{message.text}} <span style="font-size: 0.6em; color: gray;">{{message.time}}</span>
+                                <i class="fa fa-check" aria-hidden="true" style="font-size: 0.7em; color: skyblue;"></i>
+
                             </div>
                         </div>
                     </div>
