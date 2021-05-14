@@ -1,7 +1,7 @@
 new Vue ({
     el: "#root",
     data: {
-
+        searchString: "",
         counter: 2,
         myMessage: "",
         answer: ["Non capisco...", "Guarda che non sono un intelligenza artificiale", "Parlassi col muro no capirebbe comunque piu di me", "Faccio solo finta di capire"],
