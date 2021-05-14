@@ -151,6 +151,14 @@ new Vue ({
             let date = new Date
             let today = date.getMonth() + "/" + date.getDay() + "/" + date.getFullYear()
             return today
+        },
+
+        showMe() {
+            document.getElementById('invisibile').style.display = "block";
+        },
+
+        deleteMessage(num) {
+            this.contacts[this.counter].messages.splice(num, 1, "")
         }
     },
 

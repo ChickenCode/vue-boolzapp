@@ -92,15 +92,15 @@
                 </div>
             </div>
 
-            <!-- Sezione chat -->
+            <!-- barra chat -->
             <div class="flex-column flex-grow scroll-y flex" id="container" style="background-image: url('img/mine.jpg')"> 
                 <div>
-                    <div v-for="message in contacts[counter].messages" class="inline-block">
+                    <div v-for="(message, index) in contacts[counter].messages" class="inline-block">
                         <div :class=" [{ sent : message.status === 'sent' }, { recieved : message.status === 'received' }]">
-                            <div :class="[{ green : message.status === 'sent' }, { white : message.status === 'received' }]">
+                            <div @click="showMe()" :class="[{ green : message.status === 'sent' }, { white : message.status === 'received' }]" style="position: relative;">
                                 {{message.text}} <span style="font-size: 0.6em; color: gray;">{{message.time}}</span>
                                 <i class="fa fa-check" aria-hidden="true" style="font-size: 0.7em; color: skyblue;"></i>
-
+                                <div class="delete-message" Id="invisibile" @click="deleteMessage(index)" >Delete message</div>
                             </div>
                         </div>
                     </div>

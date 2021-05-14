@@ -278,6 +278,16 @@ input:focus {
 }
 
 /*Barra chat {Sezione di sinistra}*/
+.delete-message {
+    position: absolute; 
+    color: gray; 
+    padding: 10px;
+    background-color: white;
+    box-shadow: 2px 1px rgba(0, 0, 0, 0.7);
+    border: solid black 1px;
+    right: 10px;
+    display: none;
+}
 
 /*Barra scrittura {Sezione di sinistra}*/
 
