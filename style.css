@@ -24,7 +24,7 @@ input:focus {
 }
 
 .scroll-y {
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .flex-column {
@@ -184,6 +184,10 @@ input:focus {
 .inferior-border {
     border-bottom: 1px solid rgba(128,128,128, 0.5);
     padding-right: 10px;
+}
+
+.inferior-border:focus {
+    background-color: darkgray;
 }
 
 .sent {
