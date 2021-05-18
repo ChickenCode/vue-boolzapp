@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body >
+<body>
 
 <!-- Sfondo -->
 
@@ -57,7 +57,7 @@
                             <p class="gray" style="font-size: 0.8em; line-height: 1.5;">
                                 <strong style="color: black; font-size: 1.1em;">{{person.name}}</strong>
                                 <br>
-                                <span v-if="person.messages[person.messages.length - 1].text">{{person.messages[person.messages.length - 1].text}}</span>
+                                <span v-if="person.messages[person.messages.length - 1].text">{{person.messages[person.messages.length - 1].text}} {{person.messages[person.messages.length - 1].time}}</span>
                                 <span v-else>Non ci sono messaggi</span>
                             </p>
                         </div>
@@ -95,12 +95,13 @@
             <!-- barra chat -->
             <div class="flex-column flex-grow scroll-y flex" id="container" style="background-image: url('img/mine.jpg')"> 
                 <div>
-                    <div v-for="(message, index) in contacts[counter].messages" class="inline-block">
-                        <div :class=" [{ sent : message.status === 'sent' }, { recieved : message.status === 'received' }]">
-                            <div @click="showMe()" :class="[{ green : message.status === 'sent' }, { white : message.status === 'received' }]" style="position: relative;">
-                                {{message.text}} <span style="font-size: 0.6em; color: gray;">{{message.time}}</span>
-                                <i class="fa fa-check" aria-hidden="true" style="font-size: 0.7em; color: skyblue;"></i>
-                                <div class="delete-message" Id="invisibile" @click="deleteMessage(index)" >Delete message</div>
+                    <div @click="showMe(message)" v-for="(message, index) in contacts[counter].messages" class="inline-block">
+                        <div @mouseleave="hideMe(message)" :class=" [{ sent : message.status === 'sent' }, { recieved : message.status === 'received' }]">
+                            <div :class="[{ green : message.status === 'sent' }, { white : message.status === 'received' }]" style="position: relative;">
+                                <div v-if="message.showPopUp" class="delete-message" Id="invisibile" @click="deleteMessage(index)">Delete message</div>
+                                {{message.text}} <span style="font-size: 0.6em; color: gray;">{{message.time}} 
+                                    <i class="fa fa-check" aria-hidden="true" style="font-size: 0.7em; color: skyblue;"></i>
+                                </span> 
                             </div>
                         </div>
                     </div>

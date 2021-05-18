@@ -2,7 +2,7 @@ new Vue ({
     el: "#root",
     data: {
         searchString: "",
-        counter: 2,
+        counter: null,
         myMessage: "",
         answer: ["Non capisco...", "Rispondo a caso, mica sono un intelligenza artificiale.", "Parlassi col muro ne capirebbe comunque piu di me", "Faccio solo finta di capire"],
         contacts: [
@@ -16,19 +16,22 @@ new Vue ({
             date: '10/01/2020 15:30:55',
             time: "15:30",
             text: 'Hai portato a spasso il cane?',
-            status: 'sent'
+            status: 'sent',
+            showPopUp: false
             },
             {
             date: '10/01/2020 15:50:00',
             time: "15:50",
             text: 'Ricordati di dargli da mangiare',
-            status: 'sent'
+            status: 'sent',
+            showPopUp: false
             },
             {
             date: '10/01/2020 16:15:22',
             time: "16:15",
             text: 'Tutto fatto!',
-            status: 'received'
+            status: 'received',
+            showPopUp: false
             }
             ],
             },
@@ -41,19 +44,23 @@ new Vue ({
             {
             date: '20/03/2020 16:30:00',
             time: "16:30",
-            status: 'sent'
+            text: "Ciao caro, come stai?",
+            status: 'sent',
+            showPopUp: false
             },
             {
             date: '20/03/2020 16:30:55',
             time: "16:30",
             text: 'Bene grazie! Stasera ci vediamo?',
-            status: 'received'
+            status: 'received',
+            showPopUp: false
             },
             {
             date: '20/03/2020 16:35:00',
             time: "16:35",
             text: 'Mi piacerebbe ma devo andare a fare la spesa.',
-            status: 'sent'
+            status: 'sent',
+            showPopUp: false
             }
             ],
             },{
@@ -66,19 +73,22 @@ new Vue ({
             date: '28/03/2020 10:10:40',
             time: "10:10",
             text: 'La Marianna va in campagna',
-            status: 'received'
+            status: 'received',
+            showPopUp: false
             },
             {
             date: '28/03/2020 10:20:10',
             time: "10:20",
             text: 'Sicuro di non aver sbagliato chat?',
-            status: 'sent'
+            status: 'sent',
+            showPopUp: false
             },
             {
             date: '28/03/2020 16:15:22',
             time: "16:15",
             text: 'Ah scusa!',
-            status: 'received'
+            status: 'received',
+            showPopUp: false
             }
             ],
             },
@@ -92,13 +102,16 @@ new Vue ({
             date: '10/01/2020 15:30:55',
             time: "15:30",
             text: 'Lo sai che ha aperto una nuova pizzeria?',
-            status: 'sent'
+            status: 'sent',
+            showPopUp: false
             },
             {
             date: '10/01/2020 15:50:00',
             time: "15:50",
             text: 'Si, ma preferirei andare al cinema',
-            status: 'received'
+            status: 'received',
+            visible: true,
+            showPopUp: false
             }
             ],
             },
@@ -120,7 +133,6 @@ new Vue ({
 
             setTimeout( () => this.newAnswer(), 3000)
             //this.newAnswer()
-            this.scrollToEnd()
         },
 
         newAnswer() {
@@ -130,6 +142,7 @@ new Vue ({
                 text: this.answer[Math.floor(Math.random() * (this.answer).length)],
                 status: 'received'
             })
+            this.scrollToEnd()
         },
 
         scrollToEnd() {
@@ -153,19 +166,23 @@ new Vue ({
             return today
         },
 
-        showMe() {
-            document.getElementById('invisibile').style.display = "block";
+        showMe(message, event) {
+            this.$set(message, "showPopUp", true)
         },
 
-        deleteMessage(num) {
-            this.contacts[this.counter].messages.splice(num, 1, "")
+        hideMe(message) {
+            this.$set(message, "showPopUp", false)
+        },
+
+        deleteMessage(myIndex) {
+            this.contacts[this.counter].messages.splice(myIndex, 1)
         }
     },
 
 
 
     mounted() {
-        console.log(this.getDate())
+
     }
 })
 
